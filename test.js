@@ -1,26 +1,10 @@
-const jsObject = {
-  elden_ring: {
-    alt: "elden ring",
-    title: "Elden Ring",
-    price: 59.99,
-    genre: "soul_like",
-  },
-  ff_origin: {
-    alt: "final fantasy origin",
-    title: "Final Fantasy Origin",
-    price: 69.99,
-    genre: "soul_like",
-  },
-  ff_vii_rebirth: {
-    alt: "final fantasy vii rebirth",
-    title: "Final Fantasy VII Rebirth",
-    price: 69.99,
-    genre: "fantasy",
-  },
-};
-const convertToArray = Object.keys(jsObject).map((key) => ({
+import games from "./game store datas/data/data";
+
+const gameArrays = Object.keys(games).map((key) => ({
   name: key,
-  ...jsObject[key],
+  ...games[key],
 }));
-const fantasyGame = convertToArray.filter((game) => game.genre === "fantasy");
-console.log(fantasyGame);
+
+const total = gameArrays.reduce((sum, game) => sum + game.price, 0);
+
+console.log(total);

@@ -1,10 +1,9 @@
 "use client";
 import { Search } from "@mui/icons-material";
-import PurchaseHistory from "./PurchaseHistory";
-import { UserProfile } from "./UserProfile";
 import Link from "next/link";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
+import HistoryIcon from "@mui/icons-material/History";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const Header = () => {
   return (
     <header className="header flex justify-between items-center gap-20">
@@ -25,14 +24,23 @@ const Header = () => {
 
       <div className="flex gap-20" style={{ flex: 1 }}>
         <Link href="/cart">
-          <ShoppingCartIcon fontSize="large" className="text-white" />
+          <ShoppingCartIcon
+            fontSize="large"
+            className="text-white hover:text-blue-900 active:text-black"
+          />
         </Link>
 
-        <Link href="/purchase">
-          <PurchaseHistory />
+        <Link href="/purchaseHistory">
+          <HistoryIcon
+            fontSize="large"
+            className="text-white hover:text-blue-900 active:text-black"
+          />
         </Link>
         <Link href="/userProfile">
-          <UserProfile />
+          <AccountCircleIcon
+            fontSize="large"
+            className="text-white hover:text-blue-900 active:text-black"
+          />
         </Link>
       </div>
     </header>

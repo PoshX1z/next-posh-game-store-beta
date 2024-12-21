@@ -11,14 +11,14 @@ export const Banner = ({ src, alt, title, price }) => {
     return setIsClicked(!isClicked);
   };
   return (
-    <div className="p-6 rounded-lg bg-blue-600 w-72 text-white">
+    <div className="p-6 rounded-lg bg-blue-600 w-72 text-white hover:shadow-lg hover:scale-105 transition-transform duration-300">
       <div className="w-60 h-80 relative overflow-hidden">
         <Image src={src} alt={alt} layout="fill" objectFit="cover" />
       </div>
 
       <div className="relative pt-2">
         <p className="font-semibold text-xl absolute">{title}</p>
-        <p className="text-red-300 font-semibold text-lg pt-20">${price}</p>
+        <p className="text-red-300 font-semibold text-xl pt-20">${price}</p>
         <div className="flex gap-2">
           <button className="w-full border-4 border-blue-200 bg-blue-400 hover:bg-sky-400 active:bg-sky-900 transition-all">
             <div className="flex justify-center gap-2">
